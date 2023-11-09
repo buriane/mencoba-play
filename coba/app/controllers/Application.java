@@ -7,6 +7,7 @@ import java.util.*;
 
 import models.*;
 
+@With(Secure.class)
 public class Application extends Controller {
 
     public static void index() {
@@ -29,5 +30,24 @@ public class Application extends Controller {
     public static void buatBaru(Mahasiswa objmhs) {
         objmhs.nama = objmhs.nama+" ganteng sekali";
         render(objmhs);
+    }
+
+    public static void tampilkan() {
+        List daftar = Mahasiswa.findAll();
+        render(daftar);
+    }
+
+    public static void baru(){
+        render();
+    }
+
+    public static void simpan(Mahasiswa mahasiswaku){
+        mahasiswaku.save();
+        tampilkan();
+    }
+
+    public static void edit(Long id){
+        Mahasiswa z = Mahasiswa.find("id", id).first();
+        render(z);
     }
 }

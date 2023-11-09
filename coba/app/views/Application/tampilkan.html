@@ -1,0 +1,20 @@
+<table border="1">
+<tr>
+    <th>Nama</th>
+    <th>NIM</th>
+    <th>Alamat</th>
+    <th>Edit</th>
+</tr>
+#{list items:daftar, as:'x'}
+<tr>
+    <td>${x.nama}</td>
+    <td>${x.nim}</td>
+    <td>${x.alamat}</td>
+    <td><a href="@{Application.edit(x.id)}">Edit</a></td>
+</tr>
+#{/list}
+</table>
+
+<form action="@{Application.baru()}">
+    <input type="submit" value="Baru">
+</form>

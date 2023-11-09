@@ -17,10 +17,6 @@ public class Mahasiswa extends Model {
     @ManyToOne
     public JenisKelamin kelamin;
 
-    public void setNama(String nama) {
-        this.nama = nama+" narsis";
-    }
-
     public String toString() {
         return nama;
     }

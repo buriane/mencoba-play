@@ -1,0 +1,7 @@
+<form action="@{Application.simpan()}" name="mahasiswaku">
+    Nama: <input type="text" name="mahasiswaku.nama" value="${z.nama}"><br>
+    NIM: <input type="text" name="mahasiswaku.nim" value="${z.nim}"><br>
+    Alamat: <input type="text" name="mahasiswaku.alamat" value="${z.alamat}"><br>
+    <input type="hidden" name="mahasiswaku.id" value="${z.id}">
+    <input type="submit" value="Simpan">
+</form>
